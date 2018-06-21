@@ -1,6 +1,5 @@
 import { initialState, rootReducer } from '.'
 import { squareClicked } from '..'
-import { root } from 'rxjs/internal/util/root'
 
 describe('state:reducers', () => {
   describe('rootReducer', () => {
