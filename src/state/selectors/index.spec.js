@@ -1,10 +1,30 @@
-import { getMoves } from '.'
+import { getMoves, getWinningPlayer, getWinningSquares } from '.'
 
 describe('state:selectors', () => {
-  it('extracts the moves array from the state', () => {
-    const moves = [4, 0, 2]
-    const state = { moves }
+  describe('getMoves', () => {
+    it('extracts the moves array from the state', () => {
+      const moves = [4, 0, 2]
+      const state = { moves }
 
-    expect(getMoves(state)).toBe(moves)
+      expect(getMoves(state)).toBe(moves)
+    })
+  })
+
+  describe('getWinningPlayer', () => {
+    it('extracts the winningPlayer string from the state', () => {
+      const winningPlayer = 'x'
+      const state = { winningPlayer }
+
+      expect(getWinningPlayer(state)).toBe(winningPlayer)
+    })
+  })
+
+  describe('getWinningSquares', () => {
+    it('extracts the winningSquares array from the state', () => {
+      const winningSquares = [0, 3, 6]
+      const state = { winningSquares }
+
+      expect(getWinningSquares(state)).toBe(winningSquares)
+    })
   })
 })
