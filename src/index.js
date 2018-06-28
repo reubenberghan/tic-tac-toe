@@ -6,7 +6,9 @@ import { App } from './components'
 import { configureStore } from './state'
 import registerServiceWorker from './registerServiceWorker'
 
-const store = configureStore()
+const { checkForWinEpic, epicMiddleware, store } = configureStore()
+
+epicMiddleware.run(checkForWinEpic)
 
 render(
   <Provider store={store}>
